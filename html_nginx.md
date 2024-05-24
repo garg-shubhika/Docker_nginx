@@ -52,8 +52,15 @@ Open your web browser and navigate to `http://localhost:8000`. You should see yo
    ```sh
    docker stop CONTAINER_ID
    ```
+    ```sh
+   docker stop CONTAINER NAME
+   ```
 
-3. Remove the stopped container (replace `CONTAINER_ID` with the actual container ID from the previous command):
+    For example:
+   ```sh
+   docker stop new-nginx
+   ```
+4. Remove the stopped container (replace `CONTAINER_ID` with the actual container ID from the previous command):
    ```sh
    docker rm CONTAINER_ID
    ```

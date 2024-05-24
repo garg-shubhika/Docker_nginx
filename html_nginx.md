@@ -1,4 +1,4 @@
-### Step 1: Create HTML Files for Nginx
+### Step 1: Create HTML File for Nginx
 
 1. Create the `nginx-html` directory and navigate into it:
    ```sh
@@ -58,3 +58,29 @@ Open your web browser and navigate to `http://localhost:8000`. You should see yo
    docker rm CONTAINER_ID
    ```
 
+### Step 2: Add another HTML File for Nginx
+
+1. Navigate to the `nginx-html` directory:
+   ```sh
+   cd ~/nginx-html
+   ```
+
+2. Create and edit the `about.html` file:
+   ```sh
+   nano about.html
+   ```
+
+   Add the following content to `about.html`:
+   ```html
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>About nginx</title>
+   </head>
+   <body>
+       <h1>About Page.</h1>
+       <p>This is the about page served by nginx inside a docker container.</p>
+   </body>
+   </html>
+   ```
+3. Since the nginx-html directory is mounted to `/usr/share/nginx/html` in the running container, the new file should be automatically available. Open your web browser and navigate to `http://localhost:8000/about.html` to verify that the new page is accessible.

@@ -52,11 +52,12 @@ Open your web browser and navigate to `http://localhost:8000`. You should see yo
    ```sh
    docker stop CONTAINER_ID
    ```
+   OR
     ```sh
    docker stop CONTAINER NAME
    ```
 
-    For example:
+    Example of stopping a container using container name:
    ```sh
    docker stop new-nginx
    ```

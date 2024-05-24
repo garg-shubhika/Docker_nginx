@@ -1,0 +1,60 @@
+### Step 1: Create HTML Files for Nginx
+
+1. Create the `nginx-html` directory and navigate into it:
+   ```sh
+   mkdir -p ~/nginx-html
+   cd ~/nginx-html
+   ```
+
+2. Create and edit the `index.html` file:
+   ```sh
+   nano index.html
+   ```
+
+   Add the following content to `index.html`:
+   ```html
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>nginx docker</title>
+   </head>
+   <body>
+       <h1>This is nginx inside a Docker container.</h1>
+       <p>This is the index page</p>
+   </body>
+   </html>
+   ```
+
+### Step 5: Run the Nginx Docker Container
+
+1. Run the Nginx Docker container, mapping port 8000 on your host to port 80 in the container and mounting the `nginx-html` directory:
+   ```sh
+   docker run -d -p 8000:80 -v ~/nginx-html:/usr/share/nginx/html --name new-nginx nginx
+   ```
+
+2. Verify the Docker container is running:
+   ```sh
+   docker ps
+   ```
+
+### Accessing Nginx
+
+Open your web browser and navigate to `http://localhost:8000`. You should see your HTML content displayed, showing the Nginx page from within the Docker container.
+
+### Stopping and Removing the Docker Container
+
+1. List all running Docker containers to get the container ID:
+   ```sh
+   docker ps
+   ```
+
+2. Stop the running container (replace `CONTAINER_ID` with the actual container ID from the previous command):
+   ```sh
+   docker stop CONTAINER_ID
+   ```
+
+3. Remove the stopped container (replace `CONTAINER_ID` with the actual container ID from the previous command):
+   ```sh
+   docker rm CONTAINER_ID
+   ```
+
